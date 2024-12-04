@@ -1,0 +1,55 @@
+<%= form_with(model: @user, local: true) do |form| %>
+  <div class="container mt-4">
+    <h2><%= @user.new_record? ? 'Create User' : 'Edit User' %></h2>
+
+    <!-- First Name Field -->
+    <div class="form-group">
+      <%= form.label :first_name, class: 'form-label' %>
+      <%= form.text_field :first_name, class: 'form-control w-50' %>
+    </div>
+
+    <!-- Last Name Field -->
+    <div class="form-group">
+      <%= form.label :last_name, class: 'form-label' %>
+      <%= form.text_field :last_name, class: 'form-control w-50' %>
+    </div>
+
+    <!-- Mobile Number Field -->
+    <div class="form-group">
+      <%= form.label :mobile_number, class: 'form-label' %>
+      <%= form.text_field :mobile_number, class: 'form-control w-50' %>
+    </div>
+
+    <!-- Email Field -->
+    <div class="form-group">
+      <%= form.label :email, class: 'form-label' %>
+      <%= form.email_field :email, class: 'form-control w-50' %>
+    </div>
+
+    <!-- PIN Field -->
+    <div class="form-group">
+      <%= form.label :pin, class: 'form-label' %>
+      <%= form.text_field :pin, class: 'form-control w-50', maxlength: 4, minlength: 4 %>
+    </div>
+
+    <!-- Password Field -->
+    <div class="form-group">
+      <%= form.label :password, class: 'form-label' %>
+      <%= form.password_field :password, class: 'form-control w-50' %>
+      <% if !@user.new_record? %>
+        <small class="text-muted">Leave blank to keep the current password.</small>
+      <% end %>
+    </div>
+
+    <!-- Password Confirmation Field -->
+    <div class="form-group">
+      <%= form.label :password_confirmation, class: 'form-label' %>
+      <%= form.password_field :password_confirmation, class: 'form-control w-50' %>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="form-group mt-3">
+      <%= form.submit @user.new_record? ? 'Create User' : 'Update User', class: 'btn btn-primary' %>
+    </div>
+  </div>
+<% end %>

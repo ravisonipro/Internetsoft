@@ -1,0 +1,44 @@
+<h1 class="text-center my-4">Create User</h1>
+
+<div class="card mx-auto" style="max-width: 600px;">
+  <div class="card-body">
+    <%= form_with model: @user, url: admin_users_path, local: true, html: { class: 'form-horizontal' } do |f| %>
+      
+      <div class="form-group row mb-4">
+        <%= f.label :first_name, 'First Name', class: 'col-sm-4 col-form-label' %>
+        <div class="col-sm-8">
+          <%= f.text_field :first_name, class: 'form-control form-control-lg', required: true %>
+        </div>
+      </div>
+
+      <div class="form-group row mb-4">
+        <%= f.label :last_name, 'Last Name', class: 'col-sm-4 col-form-label' %>
+        <div class="col-sm-8">
+          <%= f.text_field :last_name, class: 'form-control form-control-lg', required: true %>
+        </div>
+      </div>
+
+      <div class="form-group row mb-4">
+        <%= f.label :mobile_number, 'Mobile Number', class: 'col-sm-4 col-form-label' %>
+        <div class="col-sm-8">
+          <%= f.telephone_field :mobile_number, class: 'form-control form-control-lg', required: true %>
+        </div>
+      </div>
+
+      <div class="form-group row mb-4">
+        <%= f.label :email, 'Email', class: 'col-sm-4 col-form-label' %>
+        <div class="col-sm-8">
+          <%= f.email_field :email, class: 'form-control form-control-lg', required: true %>
+        </div>
+      </div>
+
+      <div class="form-group row mb-4">
+        <div class="col-sm-offset-4 col-sm-8">
+          <%= f.submit 'Create User', class: 'btn btn-primary btn-lg w-100 py-2' %>
+        </div>
+      </div>
+
+    <% end %>
+  </div>
+</div>
+
