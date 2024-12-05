@@ -14,6 +14,12 @@
  *= require_self
  */
 
+@import 'bootstrap';
+@import "~bootstrap/scss/bootstrap";
+
+
+@import "**/*";
+
 .sign-in-btn {
   margin-bottom: 0rem !important;
 }

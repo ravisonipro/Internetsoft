@@ -1,15 +1,16 @@
 require 'faker'
 
 
-# User.create!(
-#   email: 'ravi_admin@gmail.com',
-#   password: '12345678',
-#   role: 'super_admin',
-#   first_name: 'Ravi',
-#   last_name: 'Super Admin',
-#   mobile_number: '9998887766',
-#   pin: 1234
-# )
+User.create!(
+  email: 'ravi_admin@gmail.com',
+  password: '12345678',
+  password_confirmation: '12345678',
+  role: 'super_admin',
+  first_name: 'Ravi',
+  last_name: 'Super Admin',
+  mobile_number: '9998887766',
+  pin: 1234
+)
 
 require 'faker'
 
