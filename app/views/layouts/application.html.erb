@@ -10,6 +10,16 @@
   <%= javascript_pack_tag 'application', 'data-turbo-track': 'reload' %>
 </head>
 <body>
+  <header class="header bg-dark text-white d-flex justify-content-between align-items-center px-4 py-2">
+    <h1 class="m-0">InternetSoft</h1>
+    <div>
+      <% if user_signed_in? %>
+        <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: 'btn btn-danger btn-sm' %>
+      <% else %>
+        <%= link_to 'Sign In', new_user_session_path, class: 'btn btn-success btn-sm' %>
+      <% end %>
+    </div>
+  </header>
   <main>
     <%= yield %>
   </main>
